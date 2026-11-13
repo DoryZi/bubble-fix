@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# The collector's own state: registry, run logs (never publish a user's inbox)
+state/
+FIXLOG.md
+
+# A project's inbox and cycle scratch files
+.bubble-fix/
+cycles/*/.work/
+
+# Playwright
+test-results/
+playwright-report/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

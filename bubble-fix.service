@@ -1,0 +1,13 @@
+[Unit]
+Description=bubble-fix collector: in-app bubble, error inbox and fix cycles for every registered project
+After=default.target
+
+[Service]
+ExecStart={uv} run --quiet --directory {tool_dir} python bubble_fix.py serve
+Restart=always
+RestartSec=10
+Nice=10
+Environment=PATH={path}
+
+[Install]
+WantedBy=default.target

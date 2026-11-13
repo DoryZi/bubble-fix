@@ -1,0 +1,17 @@
+[project]
+name = "bubble-fix"
+version = "0.1.0"
+description = "Deterministic half of the /bubble-fix skill: collector service, per-project inbox, log readers, headless runner, plan-html fix deck, installer"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.setuptools]
+py-modules = []
+
+[project.optional-dependencies]
+dev = ["pytest>=9.0.2", "playwright>=1.45"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = "--ignore=tests/sample_app"
+markers = ["e2e: browser tests (Playwright, headless Chromium)"]

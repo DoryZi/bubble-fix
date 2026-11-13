@@ -1,0 +1,19 @@
+{
+  "name": "bubble-fix",
+  "owner": {
+    "name": "Dory Zidon",
+    "url": "https://doryzidon.com"
+  },
+  "metadata": {
+    "description": "bubble-fix: an in-app issue bubble, an error inbox per project, and fix cycles for Claude Code and Codex.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "bubble-fix",
+      "source": ".",
+      "description": "Drop issues in a bubble inside your app, collect its errors in one inbox per project, and let your coding agent fix the ones you pick in a cycle with an intent, a spec and a verify.",
+      "strict": false
+    }
+  ]
+}

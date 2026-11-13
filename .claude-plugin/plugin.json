@@ -1,0 +1,22 @@
+{
+  "name": "bubble-fix",
+  "version": "0.1.0",
+  "description": "An in-app bubble to drop issues, an error inbox per project, and fix and heal cycles that Claude Code or Codex run for you. A local collector service keeps the inbox and starts the cycles.",
+  "keywords": [
+    "bugs",
+    "feedback",
+    "agentic",
+    "claude-code",
+    "codex",
+    "skill",
+    "error-inbox",
+    "fix-cycle"
+  ],
+  "author": {
+    "name": "Dory Zidon",
+    "url": "https://doryzidon.com"
+  },
+  "homepage": "https://github.com/DoryZi/bubble-fix",
+  "repository": "https://github.com/DoryZi/bubble-fix",
+  "license": "MIT"
+}
