@@ -145,11 +145,14 @@ A heal cycle works the same way on errors only, in a new worktree, and ends with
 name and "merge?". Run logs, the review diff and the record stay in the cycle's `.work/`
 folder, which is gitignored.
 
-## Known gap in 0.1.0
+## Status: early release (0.1.0)
 
-The verify step of a cycle calls a separate `verify` tool that is not part of this repo yet. Point
-`BUBBLE_FIX_VERIFY_DIR` at your own copy, or expect the verify and commit step of a headless run to
-stop there. The plugin install line above is untested.
+Published early, a fuller release is coming. Two things to know today:
+
+- **The check before commit needs a `verify` tool that is not in this repo yet.** Point
+  `BUBBLE_FIX_VERIFY_DIR` at your own copy. Without it a run still makes the fix, then stops
+  and leaves the changes uncommitted in your work tree for you to review.
+- **The plugin install line above is untested.** The clone install is the one in daily use.
 
 ## Where things live
 
