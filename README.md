@@ -4,12 +4,16 @@
 
 **[Install](#install)** · [Quick start](#quick-start) · [How a fix cycle works](#how-a-fix-cycle-works) · [Why it matters](#why-it-matters)
 
-![A 23 second walk through: type an issue in the bubble, a page error is caught on its own, both are on the list, pick one and press Fix selected](docs/img/demo.gif)
+![A short walk through: click the bubble, type an issue, a page error is caught on its own, both are on the list, pick one and press Fix selected](docs/img/demo.gif)
 
-bubble-fix puts a small floating bubble on your app's pages. You type what is wrong, right
-where you see it, and it lands in an inbox for that project. The same inbox collects the
-errors your pages throw and the errors your back end logs. You pick what to fix, and your
-coding agent fixes it in a cycle that is checked before anything is committed.
+bubble-fix is an easy way to give feedback on your app, catch its errors automatically and
+have your coding agent fix them. Think of it as a simple maintenance bot for the app you are
+building.
+
+It puts a small floating bubble on your app's pages. You type what is wrong, right where you
+see it, and it lands in an inbox for that project. The same inbox collects the errors your
+pages throw and the errors your back end logs. You pick what to fix, and the agent fixes it
+in a cycle that is checked before anything is committed.
 
 Works with **Claude Code** and **Codex**. Runs on your machine, MIT.
 
@@ -42,6 +46,17 @@ Press **Fix selected** and the agent runs a full cycle on the items you picked:
 - **A record.** Each cycle leaves its own folder in your project, so you can see what was
   asked, what was done and how it was checked.
 
+## Or clear the list from your agent
+
+You do not have to press anything in the app. Use the bubble only to capture issues, then
+fix them from your harness:
+
+```text
+/bubble-fix          # Claude Code: go through the list and fix what you pick
+/bubble-fix fast     # fix every open item, no questions, and clear the list
+$bubble-fix          # the same skill in Codex
+```
+
 ## Why it matters
 
 - **Short feedback loop.** From "I saw a problem" to "it is on the list" is a few seconds.
@@ -57,6 +72,8 @@ Press **Fix selected** and the agent runs a full cycle on the items you picked:
   Heal never starts on its own.
 - **Plan in plan-html (optional):** plan the items in rounds in a [plan-html](https://github.com/DoryZi/plan-html)
   deck first, then build from the plan.
+- **Off in production:** the loader shows the bubble only on the addresses you register.
+  Leave your production address out and it never appears there.
 - **Collector service:** one local service (127.0.0.1 only) for every registered project.
 
 ## Requirements
