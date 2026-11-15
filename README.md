@@ -2,18 +2,57 @@
 
 **Drop an issue in a bubble inside your app. Your coding agent fixes the ones you pick.**
 
-bubble-fix puts a small floating bubble on your app's pages. You type what is wrong (or paste
-a screenshot) and it lands in an inbox for that project. The same inbox also collects the
-errors your back end logs and the errors your pages throw. Then you choose which items to
-fix and in which order. Claude Code or Codex runs a fix cycle on them, and a collector service
-on your machine keeps the inbox and starts the runs.
+**[Install](#install)** · [Quick start](#quick-start) · [How a fix cycle works](#how-a-fix-cycle-works) · [Why it matters](#why-it-matters)
 
-- **In-app bubble:** report an issue as text, a pasted image or a picked image.
-- **Error inbox per project:** back-end logs (JSON lines or plain text) and page errors are
-  collected, scrubbed of emails and phone numbers, and grouped when they repeat.
-- **Fix cycles:** the items you pick, in your order. Your own notes are copied exactly into the
-  cycle's `intent.md`, a `spec.md` is written, the fix is made, and a fresh verifier and reviewer
-  check it before anything is committed.
+![A 23 second walk through: type an issue in the bubble, a page error is caught on its own, both are on the list, pick one and press Fix selected](docs/img/demo.gif)
+
+bubble-fix puts a small floating bubble on your app's pages. You type what is wrong, right
+where you see it, and it lands in an inbox for that project. The same inbox collects the
+errors your pages throw and the errors your back end logs. You pick what to fix, and your
+coding agent fixes it in a cycle that is checked before anything is committed.
+
+Works with **Claude Code** and **Codex**. Runs on your machine, MIT.
+
+⭐ **If this is useful to you, please star the repo.** It is how other people find it.
+
+## Report it where you see it
+
+No screenshot pasted into a chat, no explaining which page you were on. Open the bubble, type
+a few words, add an image if it helps, and send. The note records the page it came from.
+
+![The bubble open on an orders page, with a note typed about a status chip that wraps](docs/img/report.png)
+
+## Errors are caught for you
+
+Page errors and back-end log errors land in the same inbox on their own. They are scrubbed of
+emails and phone numbers, and grouped when they repeat. The list shows your notes and the
+errors together, so you choose what goes into the next cycle and in which order.
+
+![The Issues list with one note and one caught browser error, one item ticked, the cursor on Fix selected](docs/img/issues.png)
+
+## A fix cycle, not a one-shot patch
+
+Press **Fix selected** and the agent runs a full cycle on the items you picked:
+
+- **A fix intent in your words.** Your notes are copied exactly into the cycle's `intent.md`.
+  Errors go in as facts from the logs.
+- **A spec.** The run writes a `spec.md` for the fix before it is judged.
+- **A check before commit.** A fresh verifier checks the result against the intent and the
+  spec, and a fresh reviewer reads the whole diff. Only then does the run commit.
+- **A record.** Each cycle leaves its own folder in your project, so you can see what was
+  asked, what was done and how it was checked.
+
+## Why it matters
+
+- **Short feedback loop.** From "I saw a problem" to "it is on the list" is a few seconds.
+- **Your words reach the agent unchanged.** Nothing is summarized on the way in.
+- **It follows the loop from Anthropic's SDLC playbook.** Every fix has an intent, a spec and
+  a verify, committed to git, at the size of a bug fix.
+- **You stay in charge.** You pick the items and the order. Runs never deploy, push or merge.
+- **One inbox, either agent.** Each project picks Claude Code or Codex for its cycles.
+
+## Also in the box
+
 - **Heal cycles:** fix errors in a new git worktree. The branch waits for your OK to merge.
   Heal never starts on its own.
 - **Plan in plan-html (optional):** plan the items in rounds in a [plan-html](https://github.com/DoryZi/plan-html)
@@ -131,3 +170,8 @@ this repo from it and makes the files portable; do not edit the synced files her
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
+## About
+
+Built by [Dory Zidon](https://doryzidon.com).
+Bugs and ideas are welcome in [Issues](https://github.com/DoryZi/bubble-fix/issues).

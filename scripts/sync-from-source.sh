@@ -70,6 +70,9 @@ for f in README.md LICENSE CHANGELOG.md .gitignore .claude-plugin/plugin.json .c
     copy "$TEMPLATES/$f" "$REPO_DIR/$f"
 done
 
+# README pictures.
+copy_dir "$TEMPLATES/docs" "$REPO_DIR/docs"
+
 if $DRY_RUN; then echo "would portablize the copy"; else
     python3 "$SRC/publish/portablize.py" "$REPO_DIR"
 fi
