@@ -15,7 +15,8 @@ see it, and it lands in an inbox for that project. The same inbox collects the e
 pages throw and the errors your back end logs. You pick what to fix, and the agent fixes it
 in a cycle that is checked before anything is committed.
 
-Works with **Claude Code** and **Codex**. Runs on your machine, MIT.
+**Cross-harness:** the same skill and the same inbox work in **Claude Code** and **Codex**.
+Runs on your machine, MIT.
 
 ⭐ **If this is useful to you, please star the repo.** It is how other people find it.
 
@@ -64,7 +65,8 @@ $bubble-fix          # the same skill in Codex
 - **It follows the loop from Anthropic's SDLC playbook.** Every fix has an intent, a spec and
   a verify, committed to git, at the size of a bug fix.
 - **You stay in charge.** You pick the items and the order. Runs never deploy, push or merge.
-- **One inbox, either agent.** Each project picks Claude Code or Codex for its cycles.
+- **Cross-harness.** One inbox, either agent. Each project picks Claude Code or Codex for its
+  cycles, and the skill is the same in both (`/bubble-fix` and `$bubble-fix`).
 
 ## Also in the box
 
