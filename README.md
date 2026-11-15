@@ -92,6 +92,13 @@ In Claude Code:
 /plugin install bubble-fix --marketplace DoryZi/bubble-fix
 ```
 
+If that one line is not accepted by your version, use the two steps:
+
+```text
+/plugin marketplace add DoryZi/bubble-fix
+/plugin install bubble-fix@bubble-fix
+```
+
 Or clone it (the skill finds the tool through `BUBBLE_FIX_HOME`, default `~/bubble-fix`):
 
 ```bash
@@ -147,12 +154,11 @@ folder, which is gitignored.
 
 ## Status: early release (0.1.0)
 
-Published early, a fuller release is coming. Two things to know today:
+Published early, a fuller release is coming. One thing to know today:
 
 - **The check before commit needs a `verify` tool that is not in this repo yet.** Point
   `BUBBLE_FIX_VERIFY_DIR` at your own copy. Without it a run still makes the fix, then stops
   and leaves the changes uncommitted in your work tree for you to review.
-- **The plugin install line above is untested.** The clone install is the one in daily use.
 
 ## Where things live
 
